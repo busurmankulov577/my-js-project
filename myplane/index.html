@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <style>
+    .position {
+      position: relative;
+      height: 400px;
+      padding: 20px;
+      border: 2px solid black;
+      width: 400px;
+      background-color: rgb(138, 136, 136);
+
+    }
+
+    .box {
+      height: 395px;
+      border: 2px dotted rgb(212, 210, 210);
+      width: 400px;
+
+    }
+
+    .box2 {
+      height: 351px;
+      border: 2px solid black;
+      width: 350px;
+      margin: 20px;
+      background-color: rgb(236, 232, 232);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #train {
+      position: absolute;
+      font-size: 50px;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <div class="position">
+    <ion-icon name="airplane-outline" id="train" onclick="myMove()"></ion-icon>
+    <div class="box">
+      <div class="box2">
+        <h1>ROAD</h1>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function myMove() {
+      var elem = document.getElementById("train");
+      var pos = 0;
+
+      var id = setInterval(frame, 10);
+
+      function frame() {
+        if (pos == 400) {
+          clearInterval(id);
+        } else {
+          pos++;
+          elem.style.left = pos + 'px';
+        }
+      }
+      function second (){
+        if (elem.style.left == '400px'){
+          pos++;
+          elem.style.top = pos + 'px';
+        }
+      }
+
+
+
+    }
+  </script>
+
+
+
+
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
